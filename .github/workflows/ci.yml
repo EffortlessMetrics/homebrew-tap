@@ -1,0 +1,48 @@
+name: Tap CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  HOMEBREW_TEST_TAP: effortlessmetrics/local-tap
+
+jobs:
+  test-formula:
+    name: Test formula (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+
+    steps:
+      - name: Checkout tap
+        uses: actions/checkout@v6
+
+      - name: Set up Homebrew on Linux
+        if: runner.os == 'Linux'
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Tap local checkout
+        run: |
+          brew untap "$HOMEBREW_TEST_TAP" || true
+          brew tap "$HOMEBREW_TEST_TAP" "$GITHUB_WORKSPACE"
+
+      - name: Audit formula
+        run: brew audit --formula "$HOMEBREW_TEST_TAP/perllsp"
+
+      - name: Install formula
+        run: brew install "$HOMEBREW_TEST_TAP/perllsp"
+
+      - name: Test formula
+        run: brew test "$HOMEBREW_TEST_TAP/perllsp"
+
+      - name: Verify binaries
+        run: |
+          perllsp --version
+          perl-dap --version
