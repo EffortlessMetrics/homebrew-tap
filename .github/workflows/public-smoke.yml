@@ -40,5 +40,8 @@ jobs:
       - name: Clean Linux public tap checkout
         if: always() && runner.os == 'Linux'
         run: |
+          tap_path="$(brew --repository)/Library/Taps/effortlessmetrics/homebrew-tap"
           brew uninstall perllsp || true
           brew untap effortlessmetrics/tap || true
+          mkdir -p "$(dirname "$tap_path")"
+          touch "$tap_path"
