@@ -36,3 +36,9 @@ jobs:
 
       - name: Run formula test
         run: brew test effortlessmetrics/tap/perllsp
+
+      - name: Clean Linux public tap checkout
+        if: always() && runner.os == 'Linux'
+        run: |
+          brew uninstall perllsp || true
+          brew untap effortlessmetrics/tap || true
