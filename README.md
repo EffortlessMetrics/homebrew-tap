@@ -53,3 +53,5 @@ brew upgrade perllsp
 ## Notes
 
 `brew install perl-lsp` is not supported. Use `brew install effortlessmetrics/tap/perllsp`.
+
+Maintainer publishing expectations are documented in [docs/TAP_PUBLISHING.md](docs/TAP_PUBLISHING.md).
