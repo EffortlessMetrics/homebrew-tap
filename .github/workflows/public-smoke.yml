@@ -1,0 +1,38 @@
+name: Public Tap Smoke
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  public-install:
+    name: Public install (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+
+    steps:
+      - name: Set up Homebrew on Linux
+        if: runner.os == 'Linux'
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Install from public tap
+        run: |
+          brew update
+          brew untap effortlessmetrics/tap || true
+          brew install effortlessmetrics/tap/perllsp
+
+      - name: Verify binaries
+        run: |
+          perllsp --version
+          perllsp --health
+          perl-dap --version
+
+      - name: Run formula test
+        run: brew test effortlessmetrics/tap/perllsp
