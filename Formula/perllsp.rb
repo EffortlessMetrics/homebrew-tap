@@ -5,21 +5,21 @@ class Perllsp < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/EffortlessMetrics/perl-lsp/releases/download/v0.13.2/perllsp-0.13.2-aarch64-apple-darwin.tar.gz"
-      sha256 "b063459beb653593f90d23d72b73021bb8c98d1edfda94c0ab42ec7dfa2198de"
+      url "https://github.com/EffortlessMetrics/perl-lsp/releases/download/v0.13.3/perllsp-0.13.3-aarch64-apple-darwin.tar.gz"
+      sha256 "37c8633829d3ce16d082ec527613ba81773b7b91290403cc1547f6f5db983172"
     else
-      url "https://github.com/EffortlessMetrics/perl-lsp/releases/download/v0.13.2/perllsp-0.13.2-x86_64-apple-darwin.tar.gz"
-      sha256 "d02548bfcf577715d119eaa1c8230f214c38376efe6eb50dcd2d94a1fe3ec3a1"
+      url "https://github.com/EffortlessMetrics/perl-lsp/releases/download/v0.13.3/perllsp-0.13.3-x86_64-apple-darwin.tar.gz"
+      sha256 "bb748d26464cc0424ddc344b68d62c0cceb3500c97b5b34b9bd7ad31f21fcaa2"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/EffortlessMetrics/perl-lsp/releases/download/v0.13.2/perllsp-0.13.2-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "31b250dfb62d7417559d0424281505f23d05d051220eab6d0553ddf98e3305cb"
+      url "https://github.com/EffortlessMetrics/perl-lsp/releases/download/v0.13.3/perllsp-0.13.3-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1962bb25b13c6da981df60b21ce2504ed59772dc10a43b8872bfe6eaa307432d"
     else
-      url "https://github.com/EffortlessMetrics/perl-lsp/releases/download/v0.13.2/perllsp-0.13.2-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "504c76ef313e2bd97e607210fc7bac38b9aed247c3ea94ead3ef8d6038f3f6bf"
+      url "https://github.com/EffortlessMetrics/perl-lsp/releases/download/v0.13.3/perllsp-0.13.3-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "dca8b3654f7a687af0a96fc0ad3517314cadcffae356bf2ba7c912ce65a37740"
     end
   end
 
