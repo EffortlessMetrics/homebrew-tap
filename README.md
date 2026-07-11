@@ -2,6 +2,26 @@
 
 Homebrew tap for EffortlessMetrics tools.
 
+## Install shiplog
+
+`shiplog` is distributed through this owned EffortlessMetrics tap, not
+Homebrew/core.
+
+```bash
+brew install effortlessmetrics/tap/shiplog
+```
+
+The formula currently supports Intel macOS and Intel Linux using the release
+assets from the Shiplog GitHub release. Apple Silicon and Linux ARM64 users
+should use the versionless direct installer until matching ARM release assets
+are published.
+
+Verify the installation:
+
+```bash
+shiplog --version
+```
+
 ## Install perllsp
 
 `perllsp` is distributed through this owned EffortlessMetrics tap, not Homebrew/core.

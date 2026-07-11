@@ -19,6 +19,21 @@ brew tap effortlessmetrics/tap
 
 Do not present formulas in this tap as Homebrew/core formulas.
 
+## shiplog
+
+The `shiplog` formula is the Homebrew installation path for the local-first,
+receipt-backed review packet CLI:
+
+```bash
+brew install effortlessmetrics/tap/shiplog
+```
+
+The v0.10.0 formula uses the x86_64 macOS and GNU/glibc Linux release assets
+and their entries from `SHA256SUMS.txt`. ARM users should use the direct
+versionless installer until ARM release assets are available.
+
+The formula test must verify `shiplog --version` after installation.
+
 ## perllsp
 
 The `perllsp` formula is the canonical Homebrew formula for the Perl language server and debug adapter:
