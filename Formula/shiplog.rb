@@ -9,7 +9,8 @@ class Shiplog < Formula
       url "https://github.com/EffortlessMetrics/shiplog/releases/download/v0.10.0/shiplog-x86_64-apple-darwin"
       sha256 "cbc4be5e925f255e337db9f03320b7025c082a7befc9644af48c5f30d4e8222b"
     else
-      odie "shiplog's Homebrew formula currently supports Intel macOS only"
+      url "https://github.com/EffortlessMetrics/shiplog/releases/download/v0.10.0/shiplog-aarch64-apple-darwin"
+      sha256 "8fd64718d566641b1d638034c93227d5864ce7049e064655c1d81497355efd52"
     end
   elsif OS.linux?
     if Hardware::CPU.intel?

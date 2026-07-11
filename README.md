@@ -11,10 +11,10 @@ Homebrew/core.
 brew install effortlessmetrics/tap/shiplog
 ```
 
-The formula currently supports Intel macOS and Intel Linux using the release
-assets from the Shiplog GitHub release. Apple Silicon and Linux ARM64 users
-should use the versionless direct installer until matching ARM release assets
-are published.
+The formula currently supports Intel and Apple Silicon macOS plus Intel Linux
+using the release assets from the Shiplog GitHub release. Linux ARM64 users
+should use the versionless direct installer until a matching Linux ARM release
+asset is published.
 
 Verify the installation:
 
