@@ -28,7 +28,7 @@ receipt-backed review packet CLI:
 brew install effortlessmetrics/tap/shiplog
 ```
 
-The v0.10.0 formula uses the x86_64 and aarch64 macOS assets plus the x86_64
+The current formula uses the x86_64 and aarch64 macOS assets plus the x86_64
 GNU/glibc Linux asset and their entries from `SHA256SUMS.txt`. Linux ARM users
 should use the direct versionless installer until a matching Linux ARM asset is
 available.
